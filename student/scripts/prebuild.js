@@ -92,7 +92,7 @@ if (builderConfig.linux) {    builderConfig.linux.artifactName = artifactNamePat
 
 // Setze das Output-Verzeichnis
 builderConfig.directories = builderConfig.directories || {};
-builderConfig.directories.output = `../release/${process.env.VERSION}.${process.env.BUILD_NUMBER}_${buildDate}`;
+builderConfig.directories.output = `../release/student/${process.env.VERSION}.${process.env.BUILD_NUMBER}_${buildDate}`;
 
 
 
