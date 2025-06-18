@@ -20,7 +20,7 @@ asarUnpack:
   - node_modules/simple-swizzle/**/*
   - node_modules/is-arrayish/**/*
 directories:
-  output: ../release/1.1.3.0_20260318
+  output: ../release/student/1.1.3.0_20260318
 compression: normal
 linux:
   target: AppImage
