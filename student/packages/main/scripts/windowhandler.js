@@ -20,7 +20,6 @@
 import { app, BrowserWindow, BrowserView, dialog, screen} from 'electron'
 import { join } from 'path'
 import childProcess from 'child_process' 
-import {disableRestrictions, enableRestrictions} from './platformrestrictions.js';
 
 import log from 'electron-log'
 import {SchedulerService} from './schedulerservice.ts'
@@ -385,7 +384,6 @@ class WindowHandler {
                 //restrictions
                 this.addBlurListener();  // detects if window gets out of focus 
                 if (!this.isWayland){ this.checkWindowInterval.start() }  // checks if the active window is next-exam (introduces exceptions for windows) 
-                enableRestrictions(this)  // enable restriction only when exam window is fully loaded and in focus
                 await this.sleep(2000)    // wait an additional 2 sec for windows restrictions to kick in (they steal focus)
                 this.examwindow.focus();  // focus again just to be sure
                
@@ -419,7 +417,6 @@ class WindowHandler {
                 log.warn(this.multicastClient.clientinfo)
                 this.examwindow.destroy(); 
                 this.examwindow = null;
-                disableRestrictions(this.examwindow)
                 this.multicastClient.clientinfo.exammode = false
                 this.multicastClient.clientinfo.focus = true
                 return
@@ -597,7 +594,6 @@ class WindowHandler {
                 this.examwindow.destroy(); 
                 this.examwindow = null;
                 this.checkWindowInterval.stop()
-                //disableRestrictions(this.examwindow)  //do not disable twice
                 this.multicastClient.clientinfo.exammode = false
                 this.multicastClient.clientinfo.focus = true
             }  

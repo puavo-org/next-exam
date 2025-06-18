@@ -25,7 +25,6 @@ import{ipcMain, clipboard} from 'electron'
 import { gateway4sync } from 'default-gateway';
 import os from 'os'
 import log from 'electron-log';
-import {disableRestrictions} from './platformrestrictions.js';
 import mammoth from 'mammoth';
 import wifi from 'node-wifi';
 import languageToolServer from './lt-server';
@@ -205,7 +204,6 @@ class IpcHandler {
         */ 
         ipcMain.on('restrictions', () => {  
             //this also stops the clearClipboard interval
-            disableRestrictions(this.WindowHandler.examwindow) 
         } )
 
 
