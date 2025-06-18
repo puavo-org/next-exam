@@ -1,7 +1,7 @@
 buildNumber: "1"
 buildVersion: 1.0.2.1
-productName: Next-Exam-Student
-appId: com.nextexam.student
+productName: Next-Exam-Puavo-Student
+appId: com.nextexam.puavo.student
 asar:
   smartUnpack: true
 afterPack: scripts/afterpack.js
