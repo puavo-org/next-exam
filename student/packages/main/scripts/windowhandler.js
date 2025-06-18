@@ -19,7 +19,6 @@
 
 import { app, BrowserWindow, BrowserView, dialog, screen} from 'electron'
 import { join } from 'path'
-import {disableRestrictions, enableRestrictions} from './platformrestrictions.js';
 import log from 'electron-log'
 import {SchedulerService} from './schedulerservice.ts'
 import { activeWindow } from 'get-windows';
@@ -567,7 +566,6 @@ class WindowHandler {
                 this.examwindow.destroy(); 
                 this.examwindow = null;
                 this.examDisplayId = null  // reset reserved display ID when exam window is destroyed
-                disableRestrictions(this.examwindow)
                 this.multicastClient.clientinfo.exammode = false
                 this.multicastClient.clientinfo.focus = true
                 return
@@ -759,7 +757,6 @@ class WindowHandler {
                 this.examwindow = null;
                 this.examDisplayId = null  // reset reserved display ID when exam window is closed
                 this.checkWindowInterval.stop()
-                //disableRestrictions(this.examwindow)  //do not disable twice
                 this.multicastClient.clientinfo.exammode = false
                 this.multicastClient.clientinfo.focus = true
             }  

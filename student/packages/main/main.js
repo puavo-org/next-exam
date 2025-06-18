@@ -38,7 +38,6 @@ import { updateSystemTray } from './scripts/traymenu.js'
 import JreHandler from './scripts/jre-handler.js';
 import { checkParentProcess } from './scripts/checkparent.js';
 
-import { toggleMacOSLockdown } from './scripts/platformrestrictions.js'
 JreHandler.init()
 
 
@@ -366,10 +365,6 @@ app.on('window-all-closed', () => {  // if window is closed
     app.quit()   
 })
 
-app.on('will-quit', () => {  // if window is closed
-    toggleMacOSLockdown(false)
-})
-
 app.on('before-quit', async () => {
     try {
         await session.defaultSession.clearStorageData({}); // clear cookies, cache, localStorage etc.
@@ -420,8 +415,6 @@ app.whenReady()
     session.defaultSession.setUserAgent(`Next-Exam/${config.version} (${config.info}) ${process.platform}`);  // set user agent for all sessions
     session.defaultSession.setCertificateVerifyProc((request, callback) => { callback(0); });   // set certificate verification globally for all sessions
     
-    toggleMacOSLockdown(true);
-   
     /******* Create main window *******/
     WindowHandler.createMainWindow()
 

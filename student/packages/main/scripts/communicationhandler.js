@@ -16,7 +16,6 @@
  */
 
 'use strict'
-import {disableRestrictions, enableRestrictions} from './platformrestrictions.js';
 import fs from 'fs' 
 import archiver from 'archiver'   // das macht krasseste racecoditions mit electron eigenen versionen - unbedingt die selbe version behalten wie electron
 import extract from 'extract-zip'
@@ -623,7 +622,6 @@ const __dirname = import.meta.dirname;
                         //close exam window and reopen it with the new exam section
                         WindowHandler.examwindow.once('closed', async () => {
                             if (process.platform == 'darwin'){
-                                disableRestrictions(WindowHandler.examwindow)
                                 await this.sleep(500)
                             }
                             
@@ -847,7 +845,6 @@ const __dirname = import.meta.dirname;
                 if (!this.config.development) { 
                     WindowHandler.examwindow.setFullScreen(true)  //go fullscreen again
                     WindowHandler.examwindow.setAlwaysOnTop(true, "screen-saver", 1)  //make sure the window is 1 level above everything
-                    await enableRestrictions(WindowHandler)
                     await this.sleep(2000) // wait an additional 2 sec for windows restrictions to kick in (they steal focus)
                     WindowHandler.addBlurListener();
                     // For reconnect: initialize block windows after window is repositioned
@@ -860,7 +857,6 @@ const __dirname = import.meta.dirname;
             catch (e) { //examwindow variable is still set but the window is not managable anymore (manually closed in dev mode?)
                 log.error("communicationhandler @ startExam: no functional examwindow found.. resetting")
                 
-                disableRestrictions(WindowHandler.examwindow)  //examwindow is given but not used in disableRestrictions
                 WindowHandler.examwindow = null;
                 this.multicastClient.clientinfo.exammode = false
                 this.multicastClient.clientinfo.focus = true
@@ -888,7 +884,6 @@ const __dirname = import.meta.dirname;
         //only disable restrictions if not in exam mode ( seriosuly.. how could this ever happen? )
         if (this.multicastClient.clientinfo.exammode){
             this.multicastClient.clientinfo.exammode = false
-            disableRestrictions()
         }
 
         // delete students work on students pc (makes sense if exam is written on school property)
@@ -901,7 +896,6 @@ const __dirname = import.meta.dirname;
                 }
             } catch (error) { log.error("communicationhandler @ endExam: ",error); }
         }
-
 
         if (WindowHandler.examwindow){ // in some edge cases in development this is set but still unusable - use try/catch   
             try { 
