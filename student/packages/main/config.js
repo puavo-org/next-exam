@@ -17,18 +17,19 @@ const config = {
     clientdirectory: 'EXAM-STUDENT',
 
     serverApiPort: 22422,  // this is needed to be reachable on the teachers pc for basic functionality
-    multicastClientPort: 6024,  // only needed for exam autodiscovery
+    multicastClientPort: 6034,  // only needed for exam autodiscovery
 
     multicastServerAdrr: '239.1.1.1',
     hostip: "",       // server.js
     gateway: true,
     electron: false,
     virtualized: false,
-    isPuavo: false,
+    isPuavo: true,
     
     version: '1.1.3.0',
     buildDate: '20260318',
     buildNumber: '0',
-    info: 'Release'
+    info: 'Release',
+    variant: 'puavo',
 }
 export default config;

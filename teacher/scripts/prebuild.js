@@ -59,7 +59,8 @@ const config = {
     version: '${process.env.VERSION}.${process.env.BUILD_NUMBER}',
     buildDate: '${buildDate}',
     buildNumber: '${process.env.BUILD_NUMBER}',
-    info: '${process.env.INFO}'
+    info: '${process.env.INFO}',
+    variant: '${process.env.VARIANT}'
 }
 export default config;
 `;

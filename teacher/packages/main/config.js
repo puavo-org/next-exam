@@ -15,8 +15,8 @@ const config = {
     serverdirectory: 'EXAM-TEACHER',
 
     serverApiPort: 22422,  // this is needed to be reachable on the teachers pc for basic functionality
-    multicastClientPort: 6024,  // only needed for exam autodiscovery
-    multicastServerClientPort: 6025,   // needed to find other exams in the network with the same name and prevent using the same exam name twice (confusion alert)
+    multicastClientPort: 6034,  // only needed for exam autodiscovery
+    multicastServerClientPort: 6035,   // needed to find other exams in the network with the same name and prevent using the same exam name twice (confusion alert)
 
     multicastServerAdrr: '239.1.1.1',
     hostip: "0.0.0.0",       // server.js
@@ -24,7 +24,7 @@ const config = {
     examServerList: {},
     accessToken: false,
     buildforWEB: false,
-    isPuavo: false,
+    isPuavo: true,
     
     exammodes: {
         rdp: true,
@@ -40,6 +40,7 @@ const config = {
     version: '1.1.3.0',
     buildDate: '20260318',
     buildNumber: '0',
-    info: 'Release'
+    info: 'Release',
+    variant: 'puavo'
 }
 export default config;
