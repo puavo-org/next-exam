@@ -293,11 +293,12 @@ for (let i = 0; i<16; i++ ){
 
 
 
- router.get('/registerclient/:servername/:pin/:clientname/:clientip/:hostname/:version/:bipuserid', function (req, res, next) {
+ router.get('/registerclient/:servername/:pin/:clientname/:clientip/:hostname/:version/:variant/:bipuserid', function (req, res, next) {
     const clientname = req.params.clientname
     const clientip = req.params.clientip
     const pin = req.params.pin
     const version = req.params.version
+    const variant = req.params.variant
     const servername = req.params.servername
     const token = `csrf-${crypto.randomUUID()}`
     const mcServer = config.examServerList[servername] // get the multicastserver object
@@ -314,6 +315,7 @@ for (let i = 0; i<16; i++ ){
   
     if (!mcServer) {  return res.send({sender: "server", message:t("control.notfound"), status: "error"} )  }
     if (`${versionteacher}` !== versionstudent ) {  return res.send({sender: "server", message:t("control.versionmismatch"), status: "error", version: config.version, versioninfo: config.info} )  }  
+    if (variant !== config.variant) {  return res.send({sender: "server", message:t("control.variantmismatch"), status: "error", variant: config.variant})  }
     
     if (mcServer.serverstatus.requireBiP && bipuserID == 'false'){ // req.params come as string.. not nice but simple
         return res.send({sender: "server", message:t("control.biprequired"), status: "error"} ) 

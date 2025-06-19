@@ -41,6 +41,7 @@ const config = {
     accessToken: false,
 
     version: '${process.env.VERSION}-${process.env.BUILD_NUMBER}',
+    variant: '${process.env.VARIANT}',
     buildforWEB: false,
     info: '${isDevelopment ? 'DEV' : 'LTS'}'
 }

@@ -37,6 +37,7 @@ const config = {
     electron: false,
     virtualized: false,
     version: '${process.env.VERSION}-${process.env.BUILD_NUMBER}',
+    variant: '${process.env.VARIANT}',
     info: '${isDevelopment ? 'DEV' : 'LTS'}'
 }
 export default config;
