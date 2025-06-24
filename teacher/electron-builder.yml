@@ -40,7 +40,7 @@ dmg:
   sign: false
 portable:
   useZip: false
-  unpackDirName: next-exam-teacher
+  unpackDirName: next-exam-puavo-teacher
   splashImage: public/splash.bmp
 msi:
   perMachine: true
