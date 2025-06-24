@@ -59,7 +59,7 @@ process.on('uncaughtException', (err) => {
 
 
 log.initialize(); // initialize the logger for any renderer process
-let logfile = `${WindowHandler.config.workdirectory}/next-exam-teacher.log`
+let logfile = `${WindowHandler.config.workdirectory}/next-exam-puavo-teacher.log`
 log.transports.file.resolvePathFn = () => { return logfile  }
 log.eventLogger.startLogging();
 log.errorHandler.startCatching();

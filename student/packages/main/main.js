@@ -131,7 +131,7 @@ process.on('uncaughtException', (err) => {
 
 
 log.initialize(); // initialize the logger for any renderer process
-let logfile = `${config.workdirectory}/next-exam-student.log`
+let logfile = `${config.workdirectory}/next-exam-puavo-student.log`
 log.transports.file.resolvePathFn = () => { return logfile  }
 log.eventLogger.startLogging();
 log.errorHandler.startCatching();
