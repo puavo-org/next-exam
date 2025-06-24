@@ -19,11 +19,6 @@ if (gl) {
             'virgl', 'virtio', 'spice', 'qxl'
         ];
 
-        // Zusätzliche Checks für indirekte VM-Indikatoren
-        const isLowEndGraphics = renderer.includes('swiftshader') || 
-                                renderer.includes('llvmpipe') || 
-                                renderer.includes('basic render');
-
         // Überprüfe beide Parameter und indirekte Indikatoren
         let matchFound = false;
         keywords.forEach(keyword => {
@@ -32,11 +27,6 @@ if (gl) {
                 virtual = true;
             }
         });
-
-        // Wenn Low-End-Grafik erkannt wurde, könnte es sich um eine VM handeln
-        if (isLowEndGraphics) {
-            virtual = true;
-        }
 
         // Erkennung von Wayland über Umgebungsvariable
         const isWayland = typeof process !== 'undefined' && process.env.WAYLAND_DISPLAY;
