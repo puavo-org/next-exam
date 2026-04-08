@@ -42,6 +42,7 @@
         "fr":"Französisch",
         "it":"Italienisch",
         "sl":"Slowenisch",
+        "fi":"Finnisch",
         "none": "andere",
         "spellcheck": "Rechtschreibhilfe",
         "activate": "aktivieren",
@@ -171,7 +172,8 @@
         "lang_fr": "Französisch",
         "lang_es": "Spanisch",
         "lang_it": "Italienisch",
-        "lang_sl": "Slowenisch"
+        "lang_sl": "Slowenisch",
+        "lang_fi": "Finnisch"
     },
     "math": {
         "exit":"Abgesicherten Modus beenden?",

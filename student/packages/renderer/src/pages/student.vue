@@ -217,8 +217,10 @@ export default {
         };
     },
     computed: {
-        inactivelocale() { // Display current language code
-             return this.$i18n.locale === 'de' ? 'en' : 'de';
+        inactivelocale() { // Display next language code
+             const locales = ['de', 'en', 'fi'];
+             const index = locales.indexOf(this.$i18n.locale);
+             return locales[(index + 1) % locales.length];
         }
     },
 
@@ -226,8 +228,10 @@ export default {
     methods: {
         
         toggleLocale() {
-        // Switch between 'de' and 'en'
-         this.$i18n.locale = this.$i18n.locale === 'de' ? 'en' : 'de';
+         // Cycle between the locales
+         const locales = ['de', 'en', 'fi'];
+         const index = locales.indexOf(this.$i18n.locale);
+         this.$i18n.locale = locales[(index + 1) % locales.length];
          ipcRenderer.send('set-new-locale', this.$i18n.locale);
         },
 
@@ -378,6 +382,7 @@ export default {
                 'es-ES': this.$t("student.es"),
                 'it-IT': this.$t("student.it"),
                 'sl-SI': this.$t("student.sl"),
+                'fi-FI': this.$t("student.fi"),
                 'none': this.$t("student.none"),
             }
 
@@ -1198,7 +1203,7 @@ export default {
 
         // Set locale to system locale or fallback to 'en'
         const systemLocale = navigator.language.split('-')[0] // e.g. "de" from "de-DE"
-        const locale = ['de', 'en'].includes(systemLocale) ? systemLocale : 'en' // Fallback to 'en'
+        const locale = ['de', 'en', 'fi'].includes(systemLocale) ? systemLocale : 'en' // Fallback to 'en'
         this.$i18n.locale = locale
 
     },

@@ -247,8 +247,10 @@ export default {
         }
     },
     computed: {
-        inactivelocale() { // Zeigt aktuellen Sprachcode
-             return this.$i18n.locale === 'de' ? 'en' : 'de';
+        inactivelocale() { // Display next language code
+             const locales = ['de', 'en', 'fi'];
+             const index = locales.indexOf(this.$i18n.locale);
+             return locales[(index + 1) % locales.length];
         }
     },
 
@@ -269,8 +271,10 @@ export default {
 
 
         toggleLocale() {
-            // Umschalte zwischen 'de' und 'en'
-            this.$i18n.locale = this.$i18n.locale === 'de' ? 'en' : 'de';
+            // Cycle between the locales
+            const locales = ['de', 'en', 'fi'];
+            const index = locales.indexOf(this.$i18n.locale);
+            this.$i18n.locale = locales[(index + 1) % locales.length];
         },
 
         loginBiP(){
@@ -934,7 +938,7 @@ export default {
 
         // set the locale to the system locale
         const systemLocale = navigator.language.split('-')[0] // z.B. "de" aus "de-DE"
-        const locale = ['de', 'en'].includes(systemLocale) ? systemLocale : 'en' // Fallback zu 'en'
+        const locale = ['de', 'en', 'fi'].includes(systemLocale) ? systemLocale : 'en' // Fallback zu 'en'
         this.$i18n.locale = locale
         //console.log("locale:", systemLocale, locale)
 
