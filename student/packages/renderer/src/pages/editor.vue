@@ -562,6 +562,7 @@ export default {
                 'es-ES': this.$t("editor.lang_es"),
                 'it-IT': this.$t("editor.lang_it"),
                 'sl-SI': this.$t("editor.lang_sl"),
+                'fi-FI': this.$t("editor.lang_fi"),
             };
         },
     },

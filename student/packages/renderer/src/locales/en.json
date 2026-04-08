@@ -42,6 +42,7 @@
         "fr":"French",
         "it":"Italian",
         "sl":"Slovenian",
+        "fi":"Finnish",
         "none": "none",
         "spellcheck": "Spellcheck",
         "activate": "activate",
@@ -170,7 +171,8 @@
         "lang_fr": "French",
         "lang_es": "Spanish",
         "lang_it": "Italian",
-        "lang_sl": "Slovenian"
+        "lang_sl": "Slovenian",
+        "lang_fi": "Finnish"
     },
     "math": {
         "exit":"Exit safe exam mode",

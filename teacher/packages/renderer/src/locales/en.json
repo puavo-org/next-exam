@@ -142,6 +142,7 @@
         "fr":"French",
         "it":"Italian",
         "sl":"Slovenian",
+        "fi":"Finnish",
         "backupauto":"Automatic Retreival",
         "backupautoquestion":"Please set the interval for automatic retreival?",
         "backupautohint":"(Timeframe in minutes)",

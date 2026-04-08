@@ -141,6 +141,7 @@
         "fr":"Französisch",
         "it":"Italienisch",
         "sl":"Slowenisch",
+        "fi":"Finnisch",
         "backupauto":"Automatische Sicherung",
         "backupautoquestion":"In welchen Abständen sollen die Arbeiten geholt werden?",
         "backupautohint":"(Zeitangabe in Minuten)",
