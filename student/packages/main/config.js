@@ -24,11 +24,11 @@ const config = {
     gateway: true,
     electron: false,
     virtualized: false,
-    isPuavo: false,
+    isPuavo: true,
     
-    version: '1.1.3.0',
-    buildDate: '20260318',
-    buildNumber: '0',
-    info: 'Release'
+    version: '1.1.3.1',
+    buildDate: '20260408',
+    buildNumber: '1',
+    info: 'Release',
 }
 export default config;
