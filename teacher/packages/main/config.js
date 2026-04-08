@@ -37,9 +37,9 @@ const config = {
         activesheets: false
     },
 
-    version: '1.1.3.0',
-    buildDate: '20260318',
-    buildNumber: '0',
+    version: '1.1.3.1',
+    buildDate: '20260408',
+    buildNumber: '1',
     info: 'Release',
     variant: 'puavo'
 }
