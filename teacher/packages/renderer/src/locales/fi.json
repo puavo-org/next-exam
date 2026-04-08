@@ -34,7 +34,7 @@
         "onlineexams": "BiP-kokeet",
         "bipnotloggedin": "Kirjaudu BiP:iin ennen kokeen aloittamista",
         "noNews":"Ei uutisia saatavilla",
-        "backupfolder": "Varmuuskopiohakemisto",
+        "backupfolder": "Varmuuskopiot",
         "backupfolderinfo": "Anna polku varmuuskopiohakemistolle",
         "extendedsettings": "Lisäasetukset",
         "incompatible": "Ei-yhteensopiva nykyisen version kanssa",
@@ -236,7 +236,7 @@
         "noprinterChosen": "valitse tulostin",
         "selectfile": "Valitse tiedosto",
         "logoutQuestion": "Haluatko kirjautua ulos?",
-        "serverlog": "Palvelimen loki",
+        "serverlog": "Loki",
         "examNamePlaceholder": "5a-matematiikka",
         "invalidDomainShort": "Virheellinen verkkotunnus!",
         "exampleAbbr": "esim.:"
