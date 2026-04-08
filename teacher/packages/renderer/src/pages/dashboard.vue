@@ -160,7 +160,7 @@
                 <li v-if="config.exammodes && config.exammodes.editor"><a class="dropdown-item" @click="selectExamType('editor')" :class="{ active: isExamType('editor') }">{{$t('dashboard.lang')}}</a></li>
                 <li v-if="config.exammodes && config.exammodes.eduvidual"><a class="dropdown-item" @click="selectExamType('eduvidual')" :class="{ active: isExamType('eduvidual') }">{{$t('dashboard.eduvidual')}}</a></li>
                 <li v-if="config.exammodes && config.exammodes.gforms"><a class="dropdown-item" @click="selectExamType('gforms')" :class="{ active: isExamType('gforms') }">{{$t('dashboard.gforms')}}</a></li>
-                <li v-if="config.exammodes && config.exammodes.website"><a class="dropdown-item" @click="selectExamType('website')" :class="{ active: isExamType('website') }">Website</a></li>
+                <li v-if="config.exammodes && config.exammodes.website"><a class="dropdown-item" @click="selectExamType('website')" :class="{ active: isExamType('website') }">{{$t('dashboard.website')}}</a></li>
                 <li v-if="config.exammodes && config.exammodes.activesheets"><a class="dropdown-item" @click="selectExamType('activesheets')" :class="{ active: isExamType('activesheets') }">Active Sheets</a></li>
                 <li v-if="config.exammodes && config.exammodes.microsoft365"><a class="dropdown-item" @click="selectExamType('microsoft365')" :class="{ active: isExamType('microsoft365') }">Microsoft365</a></li>
                 <li v-if="config.exammodes && config.exammodes.rdp"><a class="dropdown-item" @click="selectExamType('rdp')" :class="{ active: isExamType('rdp') }">RDP</a> </li>
@@ -207,7 +207,7 @@
                 <!-- File Select Button -->
                 <button v-if="config.accessToken && !serverstatus.examSections[serverstatus.activeSection].msOfficeFile" @click="onedriveUploadselect()" class="btn btn-sm btn-info text-truncate">
                     <img src="/src/assets/img/svg/win.svg" width="24" height="24">
-                    <span class="ms-1">Datei wählen</span>
+                    <span class="ms-1">{{$t('dashboard.selectfile')}}</span>
                 </button>
 
                 <!-- Selected File Button -->
@@ -456,7 +456,7 @@
 
         <!-- LOG START -->
         <div id="loginfo">
-            <div id="logcheck" @click="fetchLOG();"> <div id="eye" class="darkgreen eyeopen"></div> &nbsp;Server Log</div>
+            <div id="logcheck" @click="fetchLOG();"> <div id="eye" class="darkgreen eyeopen"></div> &nbsp;{{$t('dashboard.serverlog')}}</div>
             
             <div class="logscrollarea" id="logscrollarea">     
                 
@@ -1162,11 +1162,11 @@ computed: {
             case 'editor': return this.$t('dashboard.lang');
             case 'eduvidual': return this.$t('dashboard.eduvidual');
             case 'gforms': return this.$t('dashboard.gforms');
-            case 'website': return 'Website';
+            case 'website': return this.$t('dashboard.website');
             case 'activesheets': return 'Active Sheets';
             case 'microsoft365': return 'Microsoft365';
             case 'rdp': return 'RDP';
-            default: return 'Select Type';
+            default: return this.$t('dashboard.exammode');
             }
         },
 
@@ -1426,7 +1426,7 @@ computed: {
             this.$swal.fire({
                 title: "Logout",
                 icon: 'question',
-                text: 'Wollen sie sich ausloggen?',
+                text: this.$t('dashboard.logoutQuestion'),
                 showCancelButton: true,
                 cancelButtonText: this.$t("dashboard.cancel"),
                 reverseButtons: true,

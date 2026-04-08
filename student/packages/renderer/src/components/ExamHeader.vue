@@ -159,8 +159,8 @@
         switch (message) {
 
           case 'nopermissions':
-            title = 'Standortberechtigung erforderlich';
-            text = 'Windows benötigt Standortberechtigungen, um WLAN-Informationen abzurufen. Bitte aktivieren Sie die Positionsdienste in den Datenschutz- und Sicherheitseinstellungen.';
+            title = this.$t('general.locationTitle');
+            text = this.$t('general.locationText');
             icon = 'warning';
             break;
           default:

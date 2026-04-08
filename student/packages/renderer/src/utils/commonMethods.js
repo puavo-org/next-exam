@@ -19,8 +19,8 @@ export function gracefullyExit() {
       html: needsPw ? `
         <div class="m-2 mt-4">
           <div class="input-group m-1 mb-1">
-            <span class="input-group-text col-3" style="width:140px;">Passwort</span>
-            <input class="form-control" type="password" id="localpassword" placeholder="Passwort">
+            <span class="input-group-text col-3" style="width:140px;">${this.$t("student.password")}</span>
+            <input class="form-control" type="password" id="localpassword" placeholder="${this.$t("student.password")}">
           </div>
         </div>
       ` : "",
@@ -71,8 +71,8 @@ export function gracefullyExit() {
         confirmButtonText: "OK", // Confirm button text
         // Use HTML for multiple inputs
         html: `
-            <input id="swal-input-ip" class="swal2-input" type="text" value="${this.serverip}" placeholder="IP-Adresse">
-            <input id="swal-input-pin" class="swal2-input" type="number" value="${this.pincode}" placeholder="PIN">
+            <input id="swal-input-ip" class="swal2-input" type="text" value="${this.serverip}" placeholder="${this.$t("student.ip")}">
+            <input id="swal-input-pin" class="swal2-input" type="number" value="${this.pincode}" placeholder="${this.$t("student.pin")}">
         `,
         preConfirm: () => {
             const ip = document.getElementById('swal-input-ip').value.trim();    // Get IP value
@@ -80,7 +80,7 @@ export function gracefullyExit() {
             const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/; // Simple IP regex
 
             if (!ip || !ipRegex.test(ip)) {
-                this.$swal.showValidationMessage("Ungültige IP-Adresse."); // Show IP error message
+                this.$swal.showValidationMessage(this.$t("general.invalidip")); // Show IP error message
                 return false;
             }
             if (!pin) {

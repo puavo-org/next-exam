@@ -112,7 +112,7 @@
         <div class="col8">
             <div class="input-group  mb-1 mt-0">
                 <span class="input-group-text col-2 grayback" id="inputGroup-sizing-lg" style="width:170px;max-width:170px;min-width:170px;">{{$t("startserver.examname")}}</span>
-                <input v-model="servername" @paste.prevent @drop.prevent @click="servername = ''; checkExistingExam()" maxlength="20" type="text" class="form-control" id="servername" placeholder="5a-mathematik" style="width:200px;max-width:200px;min-width:135px;">
+                <input v-model="servername" @paste.prevent @drop.prevent @click="servername = ''; checkExistingExam()" maxlength="20" type="text" class="form-control" id="servername" :placeholder="$t('dashboard.examNamePlaceholder')" style="width:200px;max-width:200px;min-width:135px;">
             </div> 
 
             <!-- could be used to set an ESCAPE PASSWORD for students to make it harder to leave on connection loss -->
@@ -275,6 +275,7 @@ export default {
             const locales = ['de', 'en', 'fi'];
             const index = locales.indexOf(this.$i18n.locale);
             this.$i18n.locale = locales[(index + 1) % locales.length];
+            ipcRenderer.send('set-new-locale', this.$i18n.locale);
         },
 
         loginBiP(){
@@ -335,7 +336,7 @@ export default {
                 if (response.fullname){
                     this.$swal.fire({
                         title: "BiP Response",
-                        text: "Verbindung hergestellt",
+                        text: this.$t("startserver.bipConnected"),
                         icon: 'info',
                         showCancelButton: false,
                     })
@@ -355,7 +356,7 @@ export default {
                 else {
                     this.$swal.fire({
                         title: "BiP Response",
-                        text: "Verbindung konnte nicht hergestellt werden",
+                        text: this.$t("startserver.bipFailed"),
                         icon: 'info',
                         showCancelButton: false,
                     })
@@ -940,6 +941,7 @@ export default {
         const systemLocale = navigator.language.split('-')[0] // z.B. "de" aus "de-DE"
         const locale = ['de', 'en', 'fi'].includes(systemLocale) ? systemLocale : 'en' // Fallback zu 'en'
         this.$i18n.locale = locale
+        ipcRenderer.send('set-new-locale', locale)
         //console.log("locale:", systemLocale, locale)
 
         // add event listener to exam input field to supress all special chars 

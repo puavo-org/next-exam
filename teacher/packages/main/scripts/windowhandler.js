@@ -19,6 +19,7 @@
 import { app, BrowserWindow, dialog, screen  } from 'electron'
 import { join } from 'path'
 import log from 'electron-log';
+import i18n from '../../renderer/src/locales/locales.js';
 
 const __dirname = import.meta.dirname;
 
@@ -213,11 +214,11 @@ class WindowHandler {
                 // do not close a running exam by accident 
                 log.info("windowhandler @ close: do not close running exam this way"); e.preventDefault(); 
                 dialog.showMessageBoxSync(this.mainwindow, {
-                    type: 'info', 
-                    buttons: ['OK'], // Nur ein Button
+                    type: 'info',
+                    buttons: ['OK'],
                     defaultId: 0,
-                    title: 'Prüfung läuft',
-                    message: 'Beenden Sie zuerst die laufende Prüfung!'
+                    title: i18n.global.t('general.examRunning'),
+                    message: i18n.global.t('general.stopExamFirst')
                 });
                 return
             }

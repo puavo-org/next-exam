@@ -37,6 +37,7 @@ import IpcHandler from './scripts/ipchandler.js'
 import { updateSystemTray } from './scripts/traymenu.js'
 import JreHandler from './scripts/jre-handler.js';
 import { checkParentProcess } from './scripts/checkparent.js';
+import i18n from '../renderer/src/locales/locales.js';
 
 JreHandler.init()
 
@@ -395,8 +396,8 @@ async function runParentProcessCheck() {
             dialog.showMessageBoxSync(WindowHandler.mainwindow, {
                 type: 'question',
                 buttons: ['OK'],
-                title: 'Terminate Program',
-                message: 'Unerlaubter Programmstart aus einem Webbrowser erkannt.\nNext-Exam wird beendet!',
+                title: i18n.global.t('main.exitTitle'),
+                message: i18n.global.t('main.browserDetected'),
             });
             WindowHandler.mainwindow.allowexit = true;
             app.quit();

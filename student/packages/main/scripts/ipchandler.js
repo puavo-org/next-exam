@@ -961,9 +961,9 @@ class IpcHandler {
                     if (data.version){
                         // compare versions and display message (teacher needs upgrade.. client needs upgrade)
                         const comparisonResult = this.compareSoftware(config.version, config.info , data.version, data.versioninfo ) //serverVersion, serverStatus, localVersion, localStatus
-                        if (comparisonResult > 0) {       event.returnValue = { status: "error", message: "Ihre Version von Next-Exam ist neuer als die der Lehrperson!" };   } 
-                        else if (comparisonResult < 0) {  event.returnValue = { status: "error", message: "Ihre Version von Next-Exam ist zu alt. Laden sie sich eine aktuelle Version herunter!" };   } 
-                        else {                            event.returnValue = { status: "error", message: "Unbekannter Fehler beim Verbindungsaufbau." };    }
+                        if (comparisonResult > 0) {       event.returnValue = { status: "error", message: t("main.versionNewer") };   }
+                        else if (comparisonResult < 0) {  event.returnValue = { status: "error", message: t("main.versionOlder") };   }
+                        else {                            event.returnValue = { status: "error", message: t("main.unknownError") };    }
                     }
                     event.returnValue = { status: "error", message: data.message };
                 }
@@ -985,7 +985,7 @@ class IpcHandler {
                 }
                 
                 // show warning message if the user does not want to reset the permissions
-                event.returnValue = { sender: "client", message: "Es gibt ein Problem mit dem Netzwerk, den Firewallregeln oder den Netzwerkberechtigungen! Bitte beheben sie dieses Problem und starten Sie Next-Exam neu!", status: "error" };
+                event.returnValue = { sender: "client", message: t("main.networkError"), status: "error" };
                 return;  
                     
                 
