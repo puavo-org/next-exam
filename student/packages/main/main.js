@@ -37,6 +37,7 @@ import IpcHandler from './scripts/ipchandler.js'
 import { updateSystemTray } from './scripts/traymenu.js'
 import JreHandler from './scripts/jre-handler.js';
 import { checkParentProcess } from './scripts/checkparent.js';
+import { checkExamEnvironment } from './scripts/checkExamEnvironment.js';
 import i18n from '../renderer/src/locales/locales.js';
 
 JreHandler.init()
@@ -419,6 +420,7 @@ app.whenReady()
     /******* Create main window *******/
     WindowHandler.createMainWindow()
 
+    checkExamEnvironment(config.development);
 
     if (config.hostip == "127.0.0.1") { config.hostip = false }
     if (config.hostip) { multicastClient.init(config.gateway)  } //multicast client only tracks other exam instances on the network
