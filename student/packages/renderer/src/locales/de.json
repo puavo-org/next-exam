@@ -4,7 +4,18 @@
             "restore": "Wiederherstellen",
             "disconnect": "Verbindung trennen",
             "exit": "Beenden"
-        }
+        },
+        "exitTitle": "Programm beenden",
+        "exitQuestion": "Wollen Sie die Anwendung Next-Exam beenden?",
+        "yes": "Ja",
+        "no": "Nein",
+        "minimizeTitle": "Minimierung",
+        "minimizeMessage": "Die Anwendung Next-Exam wurde minimiert!",
+        "browserDetected": "Unerlaubter Programmstart aus einem Webbrowser erkannt.\nNext-Exam wird beendet!",
+        "versionNewer": "Ihre Version von Next-Exam ist neuer als die der Lehrperson!",
+        "versionOlder": "Ihre Version von Next-Exam ist zu alt. Laden sie sich eine aktuelle Version herunter!",
+        "unknownError": "Unbekannter Fehler beim Verbindungsaufbau.",
+        "networkError": "Es gibt ein Problem mit dem Netzwerk, den Firewallregeln oder den Netzwerkberechtigungen! Bitte beheben sie dieses Problem und starten Sie Next-Exam neu!"
     },
     "student" : {
         "password": "Passwort",
@@ -184,7 +195,10 @@
     "general":{
         "error": "Fehler",
         "nopdf": "Keine gültige PDF Datei",
-        "wrongpassword": "Falsches Passwort"
+        "wrongpassword": "Falsches Passwort",
+        "invalidip": "Ungültige IP-Adresse.",
+        "locationTitle": "Standortberechtigung erforderlich",
+        "locationText": "Windows benötigt Standortberechtigungen, um WLAN-Informationen abzurufen. Bitte aktivieren Sie die Positionsdienste in den Datenschutz- und Sicherheitseinstellungen."
     },
     "website": {
         "reloadwebview": "Webview neu laden"

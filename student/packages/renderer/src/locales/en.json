@@ -4,7 +4,18 @@
             "restore": "Restore",
             "disconnect": "Disconnect",
             "exit": "Exit"
-        }
+        },
+        "exitTitle": "Quit Application",
+        "exitQuestion": "Do you want to quit Next-Exam?",
+        "yes": "Yes",
+        "no": "No",
+        "minimizeTitle": "Minimize to System Tray",
+        "minimizeMessage": "Next-Exam has been minimized to the system tray!",
+        "browserDetected": "Unauthorized program launch from a web browser detected.\nNext-Exam will be terminated!",
+        "versionNewer": "Your version of Next-Exam is newer than the teacher's!",
+        "versionOlder": "Your version of Next-Exam is too old. Please download a current version!",
+        "unknownError": "Unknown error while establishing connection.",
+        "networkError": "There is a problem with the network, firewall rules, or network permissions! Please fix this issue and restart Next-Exam!"
     },
     "student" : {
         "password": "Password",
@@ -183,7 +194,10 @@
     "general":{
         "error": "Error",
         "nopdf": "No valid PDF File",
-        "wrongpassword": "Wrong password"
+        "wrongpassword": "Wrong password",
+        "invalidip": "Invalid IP address.",
+        "locationTitle": "Location permission required",
+        "locationText": "Windows requires location permissions to retrieve Wi-Fi information. Please enable location services in Privacy & Security settings."
     },
     "website": {
         "reloadwebview": "Reload webview"

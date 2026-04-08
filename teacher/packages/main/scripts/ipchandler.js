@@ -18,8 +18,7 @@
 
 
 import fs from 'fs'
-//import i18n from '../../renderer/src/locales/locales.js'
-//const { t } = i18n.global
+import i18n from '../../renderer/src/locales/locales.js'
 import { BrowserWindow, ipcMain, dialog } from 'electron'
 import {join} from 'path'
 import log from 'electron-log';
@@ -204,6 +203,19 @@ class IpcHandler {
                 });
             });
         };
+
+        // Sync UI locale to main process so server-side t() calls use the correct language
+        ipcMain.on('set-new-locale', (event, locale) => {
+            log.info(`ipchandler @ set-new-locale: setting new locale to ${locale}`)
+            const gl = i18n.global;
+            // In composition mode (legacy: false), gl.locale is a Vue ref object;
+            // in legacy mode it's a plain string. Handle both (see traymenu.js).
+            if (gl && typeof gl.locale === 'object' && 'value' in gl.locale) {
+                gl.locale.value = locale;
+            } else {
+                gl.locale = locale;
+            }
+        })
 
         /**
          *  Start BIP Login Sequence

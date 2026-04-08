@@ -4,7 +4,18 @@
             "restore": "Palauta",
             "disconnect": "Katkaise yhteys",
             "exit": "Sulje"
-        }
+        },
+        "exitTitle": "Sulje sovellus",
+        "exitQuestion": "Haluatko sulkea Next-Examin?",
+        "yes": "Kyllä",
+        "no": "Ei",
+        "minimizeTitle": "Pienennä ilmaisinalueelle",
+        "minimizeMessage": "Next-Exam pienennettiin ilmaisinalueelle!",
+        "browserDetected": "Luvaton ohjelman käynnistys verkkoselaimesta havaittu.\nNext-Exam suljetaan!",
+        "versionNewer": "Next-Exam-versiosi on uudempi kuin opettajan versio!",
+        "versionOlder": "Next-Exam-versiosi on liian vanha. Lataa uusin versio!",
+        "unknownError": "Tuntematon virhe yhteyttä muodostettaessa.",
+        "networkError": "Verkossa, palomuurisäännöissä tai verkon käyttöoikeuksissa on ongelma! Korjaa ongelma ja käynnistä Next-Exam uudelleen!"
     },
     "student" : {
         "password": "Salasana",
@@ -183,7 +194,10 @@
     "general":{
         "error": "Virhe",
         "nopdf": "Ei kelvollinen PDF-tiedosto",
-        "wrongpassword": "Väärä salasana"
+        "wrongpassword": "Väärä salasana",
+        "invalidip": "Virheellinen IP-osoite.",
+        "locationTitle": "Sijaintilupa vaaditaan",
+        "locationText": "Windows tarvitsee sijaintioikeudet Wi-Fi-tietojen hakemiseen. Ota sijaintipalvelut käyttöön Tietosuoja ja turvallisuus -asetuksista."
     },
     "website": {
         "reloadwebview": "Lataa verkkonäkymä uudelleen"

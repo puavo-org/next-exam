@@ -3,7 +3,11 @@
         "startserver":"Aloita koe",
         "slist": "Aktiiviset kokeet",
         "ok": "OK",
-        "offline": "Ei verkkoyhteyttä"
+        "offline": "Ei verkkoyhteyttä",
+        "examRunning": "Koe käynnissä",
+        "stopExamFirst": "Lopeta ensin käynnissä oleva koe!",
+        "error": "Virhe",
+        "invalidDomainText": "Anna kelvollinen verkkotunnus."
     },
     "serverlist" : {
         "pwd": "Salasana",
@@ -35,7 +39,9 @@
         "extendedsettings": "Lisäasetukset",
         "incompatible": "Ei-yhteensopiva nykyisen version kanssa",
         "selectinterface": "Valitse verkkoliitäntä",
-        "selectinterfaceinfo": "Valitse ensisijainen verkkoliitäntä!"
+        "selectinterfaceinfo": "Valitse ensisijainen verkkoliitäntä!",
+        "bipConnected": "Yhteys muodostettu",
+        "bipFailed": "Yhteyttä ei voitu muodostaa"
     },
     "dashboard":{
         "removeURL": "Poista URL",
@@ -227,7 +233,13 @@
         "documentsinfo": "Asiakirjat opiskelijan laitteella: ",
         "filesizewarning": "Tiedostokoko",
         "filesizewarningtext": "{filename} on suurempi kuin 8 Mt ({size} Mt). Suuret tiedostot voivat hidastaa siirtoa.",
-        "noprinterChosen": "valitse tulostin"
+        "noprinterChosen": "valitse tulostin",
+        "selectfile": "Valitse tiedosto",
+        "logoutQuestion": "Haluatko kirjautua ulos?",
+        "serverlog": "Palvelimen loki",
+        "examNamePlaceholder": "5a-matematiikka",
+        "invalidDomainShort": "Virheellinen verkkotunnus!",
+        "exampleAbbr": "esim.:"
     },
     "control": {
         "tokennotvalid": "tunniste ei kelpaa",

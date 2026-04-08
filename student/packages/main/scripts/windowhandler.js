@@ -23,6 +23,7 @@ import log from 'electron-log'
 import {SchedulerService} from './schedulerservice.ts'
 import { activeWindow } from 'get-windows';
 import platformDispatcher from './platformDispatcher.js';
+import i18n from '../../renderer/src/locales/locales.js';
 
 const __dirname = import.meta.dirname;
 
@@ -906,8 +907,8 @@ class WindowHandler {
         try {
             await dialog.showMessageBox(this.mainwindow, {
                 type: 'warning',
-                buttons: ['Ok'],
-                title: 'Programm Beenden',
+                buttons: ['OK'],
+                title: i18n.global.t('main.exitTitle'),
                 message: message,
                 cancelId: 1
             });
@@ -926,9 +927,9 @@ class WindowHandler {
         try {
             let choice = await dialog.showMessageBox(this.mainwindow, {
                 type: 'question',
-                buttons: ['Ja', 'Nein'],
-                title: 'Programm beenden',
-                message: 'Wollen sie die Anwendung Next-Exam beenden?',
+                buttons: [i18n.global.t('main.yes'), i18n.global.t('main.no')],
+                title: i18n.global.t('main.exitTitle'),
+                message: i18n.global.t('main.exitQuestion'),
                 cancelId: 1
             });
             if(choice.response == 1){
@@ -949,9 +950,9 @@ class WindowHandler {
             await dialog.showMessageBox(this.mainwindow, {
                 type: 'info',
                 buttons: ['OK'],
-                title: 'Minimize to System Tray',
-                message: 'Die Anwendung Next-Exam wurde minimiert!',
-        
+                title: i18n.global.t('main.minimizeTitle'),
+                message: i18n.global.t('main.minimizeMessage'),
+
             });
         } finally {
             this.minimizeWarningOpen = false

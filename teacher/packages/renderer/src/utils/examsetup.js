@@ -21,14 +21,14 @@ function getTestURL(){
         cancelButtonText: this.$t("dashboard.cancel"),
         html: `
             <div class="my-content">                   
-                zB.: https://www.classtime.com
+                ${this.$t("dashboard.exampleAbbr")} https://www.classtime.com
             </div>
             `,  
         didOpen: () => {
             document.getElementsByClassName('my-custom-input')[0].value = this.serverstatus.examSections[this.serverstatus.activeSection].domainname || ''
         },
         inputValidator: (value) => {
-            if (!isValidFullDomainName(value)) {return 'Ungültige Domain!'}
+            if (!isValidFullDomainName(value)) {return this.$t("dashboard.invalidDomainShort")}
         }  
     })
     .then((input) => {
@@ -362,8 +362,8 @@ async function configureRDP(){
             
             if (!domain) {
                 this.$swal.fire({
-                    title: "Fehler",
-                    text: "Bitte geben Sie eine gültige Domain ein.",
+                    title: this.$t("general.error"),
+                    text: this.$t("general.invalidDomainText"),
                     icon: "error"
                 });
                 return;

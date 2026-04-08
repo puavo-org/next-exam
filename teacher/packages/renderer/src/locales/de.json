@@ -3,7 +3,11 @@
         "startserver":"Prüfung anlegen",
         "slist": "Aktive Prüfungen",
         "ok": "OK",
-        "offline": "Keine Netzwerkverbindung"
+        "offline": "Keine Netzwerkverbindung",
+        "examRunning": "Prüfung läuft",
+        "stopExamFirst": "Beenden Sie zuerst die laufende Prüfung!",
+        "error": "Fehler",
+        "invalidDomainText": "Bitte geben Sie eine gültige Domain ein."
     },
     "serverlist" : {
         "pwd": "Passwort",
@@ -35,7 +39,9 @@
         "extendedsettings": "Erweitert",
         "incompatible": "Nicht kompatibel mit der aktuellen Version",
         "selectinterface": "Netzwerk-Schnittstelle wählen",
-        "selectinterfaceinfo": "Bitte wählen Sie eine bevorzugte Netzwerkschnittstelle aus!"
+        "selectinterfaceinfo": "Bitte wählen Sie eine bevorzugte Netzwerkschnittstelle aus!",
+        "bipConnected": "Verbindung hergestellt",
+        "bipFailed": "Verbindung konnte nicht hergestellt werden"
     },
     "dashboard":{
         "removeURL": "URL entfernen",
@@ -227,7 +233,13 @@
         "documentsinfo": "Dokumente auf dem Schüler:innen-Gerät: ",
         "filesizewarning": "Dateigröße",
         "filesizewarningtext": "{filename} ist größer als 8 MB ({size} MB). Große Dateien können die Übertragung verlangsamen.",
-        "noprinterChosen": "Bitte wählen Sie einen Drucker"
+        "noprinterChosen": "Bitte wählen Sie einen Drucker",
+        "selectfile": "Datei wählen",
+        "logoutQuestion": "Wollen Sie sich ausloggen?",
+        "serverlog": "Server Log",
+        "examNamePlaceholder": "5a-mathematik",
+        "invalidDomainShort": "Ungültige Domain!",
+        "exampleAbbr": "zB.:"
     },
     "control": {
         "tokennotvalid": "Das Token ist ungültig",
