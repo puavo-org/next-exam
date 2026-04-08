@@ -1,7 +1,7 @@
 { 
     "general": {
         "startserver":"Start Exam",
-        "slist": "Aktive Exams",
+        "slist": "Active Exams",
         "ok": "OK",
         "offline": "No Network Connection"
     },
