@@ -330,7 +330,7 @@ for (let i = 0; i<16; i++ ){
     //console.log(versionteacher, versionstudent)
   
     if (!mcServer) {  return res.send({sender: "server", message:t("control.notfound"), status: "error"} )  }
-    if (`${versionteacher}` !== versionstudent ) {  return res.send({sender: "server", message:t("control.versionmismatch"), status: "error", version: config.version, versioninfo: config.info} )  }  
+    if (`v${versionteacher}` !== versionstudent ) {  return res.send({sender: "server", message:t("control.versionmismatch"), status: "error", version: config.version, versioninfo: config.info} )  }  
     
     if (mcServer.serverstatus.requireBiP && bipuserID == 'false'){ // req.params come as string.. not nice but simple
         return res.send({sender: "server", message:t("control.biprequired"), status: "error"} ) 
