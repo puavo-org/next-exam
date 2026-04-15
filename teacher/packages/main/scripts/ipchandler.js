@@ -723,7 +723,9 @@ class IpcHandler {
             this.availableInterfaces = null
             
             // Collect all IPv4 addresses
-            Object.keys(interfaces).forEach((interfaceName) => {
+            Object.keys(interfaces)
+              .filter(name => !name.startsWith('vpn'))
+              .forEach((interfaceName) => {
                 interfaces[interfaceName].forEach((iface) => {
                     // Filter out loopback and local addresses
                     if (iface.family === 'IPv4' && 
