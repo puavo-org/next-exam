@@ -119,6 +119,7 @@ class IpcHandler {
 
         // Helper function for common exception URLs (used by all exam modes)
         const checkCommonExceptions = (targetUrl) => {
+            if (targetUrl.includes("https://api.opinsys.fi/oidc/")) return true;   // Opinsys login (OIDC), including the login form POST
             if (targetUrl.includes("login") && targetUrl.includes("Microsoft")) return true;
             if (targetUrl.includes("login") && targetUrl.includes("Google")) return true;
             if (targetUrl.includes("accounts") && targetUrl.includes("google.com")) return true;
